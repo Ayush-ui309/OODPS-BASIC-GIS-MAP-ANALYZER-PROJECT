@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>Statistics Dashboard</h1>
+</header>
+
+<div class="card-container">
+
+    <div class="card">
+        <h2>Total Objects</h2>
+        <p>{{ total_objects }}</p>
+    </div>
+    <div class="card">
+    <h3>Polygon Areas</h3>
+
+    <table class="polygon-table">
+        <tr>
+            <th>Polygon</th>
+            <th>Area</th>
+        </tr>
+
+        {% for name, area in polygon_areas.items() %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ area }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+ </div>
+
+    <div class="card">
+        <h2>Largest Polygon Area</h2>
+        <p>{{ largest_polygon }}</p>
+    </div>
+    <div class="card">
+        <h2>Largest Polygon Name</h2>
+        <p>{{ largest_polygon_name }}</p>
+    </div>
+
+
+</div>
+
+<div class="nav-buttons">
+    <a href="/home" class="button">⬅ Back to Dashboard</a>
+</div>
+
+<footer>
+    GIS Project
+</footer>
+
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>

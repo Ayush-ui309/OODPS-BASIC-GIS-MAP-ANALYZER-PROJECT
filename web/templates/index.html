@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="title">Basic GIS Map Analyzer</div>
+
+<div class="card-container">
+
+    <div class="card">
+        <h2>Total Records</h2>
+        <p style="font-size:22px;">{{ total }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Points</h2>
+        <p style="font-size:22px;">{{ points }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Lines</h2>
+        <p style="font-size:22px;">{{ lines }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Polygons</h2>
+        <p style="font-size:22px;">{{ polygons }}</p>
+    </div>
+
+</div>
+<div class="formula">
+
+<h2>Formulas Used</h2>
+
+<p><b>Distance Formula (Line)</b></p>
+<p>d = √((x2-x1)² + (y2-y1)²)</p>
+
+<p><b>Polygon Area Formula</b></p>
+<p>Area = ½ * |(x1*y2 +x2*y3 + ... + xn*y1) - (y1*x2 + y2*x3 + ... + yn*x1)|</p>
+</div>
+
+<div style="text-align:center; margin-top:30px;">
+    <a href="/data" class="button">Data View</a>
+    <a href="/stats" class="button">Statistics</a>
+</div>
+
+<footer>GIS Project - OOP Implementation</footer>
+
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data View</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="title">Data View</div>
+
+<!-- ================= POINTS ================= -->
+
+<div class="table-container">
+<h2>Points</h2>
+
+<table>
+<tr>
+    <th>Type</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>X</th>
+    <th>Y</th>
+</tr>
+
+{% for p in points %}
+<tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>{{ p[2] }}</td>
+    <td>{{ p[3] }}</td>
+    <td>{{ p[4] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+
+<!-- ================= LINES ================= -->
+
+<div class="table-container">
+<h2>Lines</h2>
+
+<table>
+<tr>
+    <th>Type</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Distance</th>
+    <th>Points</th>
+</tr>
+
+{% for l in lines %}
+<tr>
+    <td>{{ l[0] }}</td>
+    <td>{{ l[1] }}</td>
+    <td>{{ l[2] }}</td>
+    <td>{{ l[3] }}</td>
+    <td>{{ l[8] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+
+<!-- ================= POLYGONS ================= -->
+
+<div class="table-container">
+<h2>Polygons</h2>
+
+<table>
+<tr>
+    <th>Type</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Area</th>
+    <th>Points</th>
+</tr>
+
+{% for poly in polygons %}
+<tr>
+    <td>{{ poly[0] }}</td>
+    <td>{{ poly[1] }}</td>
+    <td>{{ poly[2] }}</td>
+    <td>{{ poly[3] }}</td>
+    <td>{{ poly[8] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+<div class="nav-buttons">
+    <a href="/home" class="button">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>
