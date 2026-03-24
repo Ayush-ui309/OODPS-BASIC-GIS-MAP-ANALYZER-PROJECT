@@ -54,6 +54,10 @@ void Line::display() {
     cout << "Distance: " << calculateDistance() << endl;
 }
 
+string Line::getPointsString() {
+    return p1.getName() + " -> " + p2.getName();
+}
+
 // Polygon Constructor
 Polygon::Polygon(int id, string name, vector<Point> vertices)
 : GeoObject(id, name) {
@@ -86,6 +90,15 @@ void Polygon::display() {
 
     cout << "Polygon ID: " << id << " Name: " << name << endl;
     cout << "Area: " << calculateArea() << endl;
+}
+
+string Polygon::getPointsString() {
+    string result = "";
+    for(int i = 0; i < vertices.size(); i++) {
+        if(i > 0) result += " -> ";
+        result += vertices[i].getName();
+    }
+    return result;
 }
 
 // MapLayer addObject

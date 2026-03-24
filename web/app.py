@@ -15,9 +15,9 @@ def intro():
 @app.route('/home')
 def home():
     total_records = 0
-    points=0;
-    lines=0;
-    polygons=0;
+    points=0
+    lines=0
+    polygons=0
 
     if os.path.exists(CSV_FILE):
         with open(CSV_FILE, newline='') as file:
@@ -49,40 +49,15 @@ def data_view():
             reader = csv.reader(file)
             next(reader, None)
 
-            line_count = 0
-            poly_count = 0
-
             for row in reader:
 
                 if row[0] == "Point":
                     points.append(row)
 
                 elif row[0] == "Line":
-                    line_count += 1
-
-                    if line_count == 1:
-                        points_taken = "P1 → P2"
-                    elif line_count == 2:
-                        points_taken = "P3 → P4"
-                    else:
-                        points_taken = "-"
-
-                    row.append(points_taken)
                     lines.append(row)
 
                 elif row[0] == "Polygon":
-                    poly_count += 1
-
-                    if poly_count == 1:
-                        points_taken = "P1, P2, P3"
-                    elif poly_count == 2:
-                        points_taken = "P2, P3, P4, P5"
-                    elif poly_count == 3:
-                        points_taken = "P1, P3, P5, P2, P4"
-                    else:
-                        points_taken = "-"
-
-                    row.append(points_taken)
                     polygons.append(row)
 
     return render_template("data_view.html",

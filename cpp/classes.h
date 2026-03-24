@@ -42,6 +42,7 @@ public:
     Line(int id, string name, Point p1, Point p2);
 
     double calculateDistance();
+    string getPointsString();
 
     void display();
 };
@@ -55,6 +56,7 @@ public:
     Polygon(int id, string name, vector<Point> vertices);
 
     double calculateArea();
+    string getPointsString();
 
     void display();
 };

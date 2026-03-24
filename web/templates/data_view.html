@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<div class="title">Data View</div>
+<div class="title">📋 Data View</div>
 
 <!-- ================= POINTS ================= -->
 
 <div class="table-container">
-<h2>Points</h2>
+<h2>📍 Points</h2>
 
 <table>
 <tr>
@@ -20,6 +20,7 @@
     <th>Name</th>
     <th>X</th>
     <th>Y</th>
+    <th>Points</th>
 </tr>
 
 {% for p in points %}
@@ -29,6 +30,7 @@
     <td>{{ p[2] }}</td>
     <td>{{ p[3] }}</td>
     <td>{{ p[4] }}</td>
+    <td>{{ p[-1] }}</td>
 </tr>
 {% endfor %}
 
@@ -39,7 +41,7 @@
 <!-- ================= LINES ================= -->
 
 <div class="table-container">
-<h2>Lines</h2>
+<h2>📏 Lines</h2>
 
 <table>
 <tr>
@@ -56,7 +58,7 @@
     <td>{{ l[1] }}</td>
     <td>{{ l[2] }}</td>
     <td>{{ l[3] }}</td>
-    <td>{{ l[8] }}</td>
+    <td>{{ l[-1] }}</td>
 </tr>
 {% endfor %}
 
@@ -67,7 +69,7 @@
 <!-- ================= POLYGONS ================= -->
 
 <div class="table-container">
-<h2>Polygons</h2>
+<h2>🔷 Polygons</h2>
 
 <table>
 <tr>
@@ -84,12 +86,13 @@
     <td>{{ poly[1] }}</td>
     <td>{{ poly[2] }}</td>
     <td>{{ poly[3] }}</td>
-    <td>{{ poly[8] }}</td>
+    <td>{{ poly[-1] }}</td>
 </tr>
 {% endfor %}
 
 </table>
 </div>
+
 <div class="nav-buttons">
     <a href="/home" class="button">⬅ Back to Dashboard</a>
 </div>
