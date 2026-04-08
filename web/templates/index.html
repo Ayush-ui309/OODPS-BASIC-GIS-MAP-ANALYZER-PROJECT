@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html class="home-page">
 <head>
-    <title>Home</title>
+    <title>Home - Basic GIS Map Analyzer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="title">Basic GIS Map Analyzer</div>
+<header>
+    <h1>Basic GIS Map Analyzer</h1>
+</header>
+
+<div class="title">Project Statistics</div>
 
 <div class="card-container">
 
     <div class="card">
-        <h2>Total Records</h2>
-        <p style="font-size:22px;">{{ total }}</p>
+        <h3>Total Records</h3>
+        <p>{{ total }}</p>
     </div>
 
     <div class="card">
-        <h2>Points</h2>
-        <p style="font-size:22px;">{{ points }}</p>
+        <h3>Points</h3>
+        <p>{{ points }}</p>
     </div>
 
     <div class="card">
-        <h2>Lines</h2>
-        <p style="font-size:22px;">{{ lines }}</p>
+        <h3>Lines</h3>
+        <p>{{ lines }}</p>
     </div>
 
     <div class="card">
-        <h2>Polygons</h2>
-        <p style="font-size:22px;">{{ polygons }}</p>
+        <h3>Polygons</h3>
+        <p>{{ polygons }}</p>
     </div>
 
 </div>
+
 <div class="formula">
+    <h2>Formulas Used</h2>
+    
+    <p><b>Distance Formula (Line)</b></p>
+    <p>d = √((x₂-x₁)² + (y₂-y₁)²)</p>
 
-<h2>Formulas Used</h2>
-
-<p><b>Distance Formula (Line)</b></p>
-<p>d = √((x2-x1)² + (y2-y1)²)</p>
-
-<p><b>Polygon Area Formula</b></p>
-<p>Area = ½ * |(x1*y2 +x2*y3 + ... + xn*y1) - (y1*x2 + y2*x3 + ... + yn*x1)|</p>
+    <p><b>Polygon Area Formula</b></p>
+    <p>Area = ½ × |(x₁y₂ + x₂y₃ + ... + xₙy₁) - (y₁x₂ + y₂x₃ + ... + yₙx₁)|</p>
 </div>
 
-<div style="text-align:center; margin-top:30px;">
+<div class="nav-buttons">
     <a href="/data" class="button">Data View</a>
-    <a href="/stats" class="button">Statistics</a>
+    <a href="/stats" class="button accent">Statistics</a>
 </div>
 
-<footer>GIS Project - OOP Implementation</footer>
+<footer>GIS Project - Object Oriented Programming Implementation</footer>
 
 </body>
 <script src="{{ url_for('static', filename='script.js') }}"></script>

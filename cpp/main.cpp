@@ -18,7 +18,7 @@ int main() {
 
     // Create Lines
     Line l1(6,"line1",p1,p3);
-    Line l2(7,"line2",p3,p4);
+    Line l2(7,"line2",p2,p4);
 
     // Polygon 1 (Triangle)
     vector<Point> polyPoints1;
@@ -29,9 +29,9 @@ int main() {
 
     // Polygon 2 (Quadrilateral)
     vector<Point> polyPoints2;
-    polyPoints2.push_back(p2);
-    polyPoints2.push_back(p1);
     polyPoints2.push_back(p4);
+    polyPoints2.push_back(p1);
+    polyPoints2.push_back(p2);
     polyPoints2.push_back(p3);
     Polygon poly2(9,"Quadrilateral",polyPoints2);
 
@@ -39,9 +39,9 @@ int main() {
     vector<Point> polyPoints3;
     polyPoints3.push_back(p1);
     polyPoints3.push_back(p4);
-    polyPoints3.push_back(p5);
-    polyPoints3.push_back(p2);
     polyPoints3.push_back(p3);
+    polyPoints3.push_back(p2);
+    polyPoints3.push_back(p5);
     Polygon poly3(10,"pentagon",polyPoints3);
 
     // Add objects to MapLayer (Using Pointer)

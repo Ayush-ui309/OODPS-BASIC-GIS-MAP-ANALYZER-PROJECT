@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html class="stats-page">
 <head>
-    <title>Statistics</title>
+    <title>Statistics - Basic GIS Map Analyzer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -11,50 +11,49 @@
     <h1>Statistics Dashboard</h1>
 </header>
 
-<div class="card-container">
+<div class="title">Project Analytics</div>
 
-    <div class="card">
-        <h2>Total Objects</h2>
-        <p>{{ total_objects }}</p>
+<div class="stats-grid">
+    <div class="stats-card">
+        <h3>Total Objects</h3>
+        <div class="value">{{ total_objects }}</div>
     </div>
-    <div class="card">
-    <h3>Polygon Areas</h3>
-
-    <table class="polygon-table">
-        <tr>
-            <th>Polygon</th>
-            <th>Area</th>
-        </tr>
-
-        {% for name, area in polygon_areas.items() %}
-        <tr>
-            <td>{{ name }}</td>
-            <td>{{ area }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-
- </div>
-
-    <div class="card">
-        <h2>Largest Polygon Area</h2>
-        <p>{{ largest_polygon }}</p>
+    
+    <div class="stats-card">
+        <h3>Largest Polygon</h3>
+        <div class="value">{{ largest_polygon }}</div>
+        <p style="margin-top: 10px; color: var(--text-secondary); font-size: 0.9rem;">{{ largest_polygon_name }}</p>
     </div>
-    <div class="card">
-        <h2>Largest Polygon Name</h2>
-        <p>{{ largest_polygon_name }}</p>
+</div>
+
+<div class="data-section">
+    <h3>📊 Polygon Areas</h3>
+    <div class="table-container">
+        <table class="polygon-table">
+            <thead>
+                <tr>
+                    <th>Polygon Name</th>
+                    <th>Area</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, area in polygon_areas.items() %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ area }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-
-
 </div>
 
 <div class="nav-buttons">
-    <a href="/home" class="button">⬅ Back to Dashboard</a>
+    <a href="/home" class="button secondary">⬅ Back to Dashboard</a>
+    <a href="/data" class="button">Data View</a>
 </div>
 
-<footer>
-    GIS Project
-</footer>
+<footer>GIS Project - Statistical Analysis</footer>
 
 </body>
 <script src="{{ url_for('static', filename='script.js') }}"></script>

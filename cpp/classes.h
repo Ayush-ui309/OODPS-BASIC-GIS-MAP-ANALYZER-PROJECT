@@ -17,7 +17,7 @@ public:
     string getName();
 };
 
-// Point Class
+// Derived Class FOR PONTS
 class Point : public GeoObject {
 private:
     double x;

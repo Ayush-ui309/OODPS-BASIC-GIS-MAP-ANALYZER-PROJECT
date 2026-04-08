@@ -1,101 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html class="data-view-page">
 <head>
-    <title>Data View</title>
+    <title>Data View - Basic GIS Map Analyzer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="title">📋 Data View</div>
+<header>
+    <h1>Data View</h1>
+</header>
+
+<div class="title">Geographic Data Records</div>
 
 <!-- ================= POINTS ================= -->
-
-<div class="table-container">
-<h2>📍 Points</h2>
-
-<table>
-<tr>
-    <th>Type</th>
-    <th>ID</th>
-    <th>Name</th>
-    <th>X</th>
-    <th>Y</th>
-    <th>Points</th>
-</tr>
-
-{% for p in points %}
-<tr>
-    <td>{{ p[0] }}</td>
-    <td>{{ p[1] }}</td>
-    <td>{{ p[2] }}</td>
-    <td>{{ p[3] }}</td>
-    <td>{{ p[4] }}</td>
-    <td>{{ p[-1] }}</td>
-</tr>
-{% endfor %}
-
-</table>
+<div class="data-section">
+    <h3>📍 Points</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>X Coordinate</th>
+                    <th>Y Coordinate</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in points %}
+                <tr>
+                    <td>{{ p[0] }}</td>
+                    <td>{{ p[1] }}</td>
+                    <td>{{ p[2] }}</td>
+                    <td>{{ p[3] }}</td>
+                    <td>{{ p[4] }}</td>
+                    <td>{{ p[-1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
 <!-- ================= LINES ================= -->
-
-<div class="table-container">
-<h2>📏 Lines</h2>
-
-<table>
-<tr>
-    <th>Type</th>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Distance</th>
-    <th>Points</th>
-</tr>
-
-{% for l in lines %}
-<tr>
-    <td>{{ l[0] }}</td>
-    <td>{{ l[1] }}</td>
-    <td>{{ l[2] }}</td>
-    <td>{{ l[3] }}</td>
-    <td>{{ l[-1] }}</td>
-</tr>
-{% endfor %}
-
-</table>
+<div class="data-section">
+    <h3>📏 Lines</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Distance</th>
+                    <th>Connection</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for l in lines %}
+                <tr>
+                    <td>{{ l[0] }}</td>
+                    <td>{{ l[1] }}</td>
+                    <td>{{ l[2] }}</td>
+                    <td>{{ l[3] }}</td>
+                    <td>{{ l[-1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
-
 <!-- ================= POLYGONS ================= -->
-
-<div class="table-container">
-<h2>🔷 Polygons</h2>
-
-<table>
-<tr>
-    <th>Type</th>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Area</th>
-    <th>Points</th>
-</tr>
-
-{% for poly in polygons %}
-<tr>
-    <td>{{ poly[0] }}</td>
-    <td>{{ poly[1] }}</td>
-    <td>{{ poly[2] }}</td>
-    <td>{{ poly[3] }}</td>
-    <td>{{ poly[-1] }}</td>
-</tr>
-{% endfor %}
-
-</table>
+<div class="data-section">
+    <h3>🔷 Polygons</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Area</th>
+                    <th>Vertices</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for poly in polygons %}
+                <tr>
+                    <td>{{ poly[0] }}</td>
+                    <td>{{ poly[1] }}</td>
+                    <td>{{ poly[2] }}</td>
+                    <td>{{ poly[3] }}</td>
+                    <td>{{ poly[-1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="nav-buttons">
-    <a href="/home" class="button">⬅ Back to Dashboard</a>
+    <a href="/home" class="button secondary">⬅ Back to Dashboard</a>
+    <a href="/stats" class="button accent">Statistics</a>
 </div>
+
+<footer>GIS Project - Data Visualization</footer>
 
 </body>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
